@@ -1,0 +1,8 @@
+<h1>Addring reivew</h1>
+
+<%# Primeiro o que está associado, depois o que é criado %>
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :rating %>
+  <%= f.input :content %>
+  <%= f.submit %>
+<% end %>

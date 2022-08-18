@@ -1,0 +1,18 @@
+ <h1>My restaurants details:</h1>
+
+<ul>
+  <li><%= @restaurant.name %></li>
+  <li><%= @restaurant.address %></li>
+  <li><%= @restaurant.phone_number %></li>
+  <li><%= @restaurant.category%></li>
+</ul>
+
+ <h2>Reviews:</h2>
+  <%# É possível chamar o .reviews no objeto restaurante, pois foi feito um join das tabelas através dos belongs to/has many %>
+ <% @restaurant.reviews.each do |review| %>
+    <%= review.content %>
+    <%= review.rating %>
+ <% end %>
+
+
+<%= link_to "Add a new review",  new_restaurant_review_path(@restaurant)%>
